@@ -172,6 +172,7 @@ export default class LinkService implements IPDFLinkService {
     link.href = url;
     link.rel = this.externalLinkRel || DEFAULT_LINK_REL;
     link.target = newWindow ? '_blank' : this.externalLinkTarget || '';
+    link.ariaLabel = url; // add aria label with value of url, since we are unable to access text context
   }
 
   getDestinationHash() {
